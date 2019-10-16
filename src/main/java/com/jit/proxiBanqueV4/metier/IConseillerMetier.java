@@ -2,7 +2,6 @@ package com.jit.proxiBanqueV4.metier;
 
 import java.util.List;
 
-import org.springframework.data.repository.query.Param;
 
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
