@@ -11,6 +11,7 @@ import com.jit.proxiBanqueV4.dao.ICompteDao;
 import com.jit.proxiBanqueV4.dao.IConseillerDao;
 import com.jit.proxiBanqueV4.dao.IOperationDao;
 import com.jit.proxiBanqueV4.entites.Compte;
+import com.jit.proxiBanqueV4.entites.CompteCourant;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Operation;
 import com.jit.proxiBanqueV4.entites.Retrait;
@@ -27,7 +28,7 @@ public class OperationMetierImpl implements IOperationMetier {
 	@Override
 	@Transactional
 	public boolean verser(String idCompte, double montant, Long idConseiller) {
-		Compte compte=compteDao.getOne(idCompte);
+		Compte compte=compteDao.findById(idCompte).orElse(null);
 		Conseiller conseiller=conseillerDao.getOne(idConseiller);
 		Operation operation=new Versement();
 		operation.setDateOperation(new Date());
@@ -42,8 +43,12 @@ public class OperationMetierImpl implements IOperationMetier {
 	@Override
 	@Transactional
 	public boolean retirer(String idCompte, double montant, Long idConseiller) {
-		Compte compte=compteDao.getOne(idCompte);
-		if(compte.getSolde()<montant) throw new RuntimeException("solde insuffisant!");
+		Compte compte=compteDao.findById(idCompte).orElse(null);
+		double decouvert=0;
+		if(compte instanceof CompteCourant) {
+			decouvert=((CompteCourant) compte).getDecouvert();
+		}	
+		if(compte.getSolde()+decouvert<montant) throw new RuntimeException("solde insuffisant!");
 		Conseiller conseiller=conseillerDao.getOne(idConseiller);
 		Operation operation=new Retrait();
 		operation.setDateOperation(new Date());
