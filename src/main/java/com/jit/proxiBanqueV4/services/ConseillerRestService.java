@@ -19,36 +19,41 @@ public class ConseillerRestService {
 	@Autowired
 	private IConseillerMetier conseillerMetier;
 	
-	@RequestMapping(value = "/alertDecouvert/{idConseiller}",method = RequestMethod.GET)
+	@RequestMapping(value = "/proxiBanque/connecterConseiller/{emailConseiller}/{password}",method = RequestMethod.GET)
+	public int seConnecter(@PathVariable String emailConseiller,@PathVariable String password) {
+		return conseillerMetier.seConnecter(emailConseiller, password);
+	}
+
+	@RequestMapping(value = "/proxiBanque/alertDecouvert/{idConseiller}",method = RequestMethod.GET)
 	public List<Client> alertDecouvert(@PathVariable Long idConseiller) {
 		return conseillerMetier.alertDecouvert(idConseiller);
 	}
 	@Autowired
 	private IClientMetier clientMetier;
 	
-	@RequestMapping(value = "/listeClients/{idConseiller}",method = RequestMethod.GET)
+	@RequestMapping(value = "/proxiBanque/listeClients/{idConseiller}",method = RequestMethod.GET)
 	public List<Client> listeClients(@PathVariable Long idConseiller) {
 		return conseillerMetier.listeClients(idConseiller);
 	}
 	
-	@RequestMapping(value = "/getClient/{idClient}",method = RequestMethod.GET)
+	@RequestMapping(value = "/proxiBanque/getClient/{idClient}",method = RequestMethod.GET)
 	public Client getClient(@PathVariable Long idClient) {
 		return clientMetier.getClient(idClient);
 	}
 	
-	@RequestMapping(value = "/updateClient",method = RequestMethod.PUT)
+	@RequestMapping(value = "/proxiBanque/updateClient",method = RequestMethod.PUT)
 	public boolean updateClient(@RequestBody Client client) {
 		return clientMetier.updateClient(client);
 	}
-	@RequestMapping(value = "/addClient",method = RequestMethod.POST)
-	public Client createClient(@RequestBody Client client,@RequestBody double solde) {
-		return conseillerMetier.createClient(client, solde);
+	@RequestMapping(value = "/proxiBanque/addClient",method = RequestMethod.POST)
+	public Client createClient(@RequestBody Client client) {
+		return conseillerMetier.createClient(client);
 	}
-	@RequestMapping(value = "/conseillers",method = RequestMethod.POST)
+	@RequestMapping(value = "/proxiBanque/conseillers",method = RequestMethod.POST)
 	public Conseiller saveConseiller(@RequestBody Conseiller conseiller) {
 		return conseillerMetier.saveConseiller(conseiller);
 	}
-	@RequestMapping(value = "/conseillers",method = RequestMethod.GET)
+	@RequestMapping(value = "/proxiBanque/conseillers",method = RequestMethod.GET)
 	public List<Conseiller> listeConseillers() {
 		return conseillerMetier.listeConseillers();
 	}

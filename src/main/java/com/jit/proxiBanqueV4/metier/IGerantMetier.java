@@ -8,8 +8,11 @@ import com.jit.proxiBanqueV4.entites.Gerant;
 
 public interface IGerantMetier {
 	public Gerant saveGerant(Gerant gerant);
-
 	public List<Gerant> listeGerants();
+	public Gerant seConnecter(String emailGerant,String password);
+	
+	
+	
 
 	public Conseiller saveConseiller(Conseiller conseiller);
 

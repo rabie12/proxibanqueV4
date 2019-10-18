@@ -13,7 +13,6 @@ import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Compte;
 import com.jit.proxiBanqueV4.entites.CompteCourant;
 import com.jit.proxiBanqueV4.entites.Conseiller;
-import com.jit.proxiBanqueV4.entites.Parametrage;
 @Service
 public class ConseillerMetierImpl implements IConseillerMetier {
 	@Autowired
@@ -22,6 +21,8 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 	private IClientDao clientDao;
 	@Autowired
 	private ICompteDao compteDao;
+	@Autowired
+	private ICompteMetier compteMetier;
 	@Override
 	public Conseiller saveConseiller(Conseiller conseiller) {
 		return conseillerDao.save(conseiller);
@@ -33,9 +34,12 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 	}
 
 	@Override
-	public Client createClient(Client client,double solde) {
+	public Client createClient(Client client) {
 		clientDao.save(client);
-		Compte compteC=new CompteCourant(new Date(),solde,Parametrage.getDecouvert());
+		Compte compteC=new CompteCourant(new Date(),20,3000);
+		compteMetier.idCompte();
+		String idCompte="CC"+compteMetier.idCompte();
+		compteC.setIdCompte(idCompte);
 		compteC.setClient(client);
 		compteDao.save(compteC);
 		return client;
@@ -66,5 +70,33 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 	@Override
 	public List<Client> alertDecouvert(Long idConseiller) {
 		return clientDao.alertDecouvert(idConseiller);
+	}
+
+	@Override
+	public Conseiller getConseiller(Long idConseiller) {
+		return conseillerDao.getOne(idConseiller);
+	}
+
+	@Override
+	public boolean updateConseiller(Conseiller conseiller) {
+		Conseiller conseillerOld=getConseiller(conseiller.getIdConseiller());
+		conseillerOld.setNomConseiller(conseiller.getNomConseiller());
+		conseillerOld.setPrenomConseiller(conseiller.getPrenomConseiller());
+		conseillerOld.setEmailConseiller(conseiller.getEmailConseiller());
+		conseillerOld.setAdresseConseiller(conseiller.getAdresseConseiller());
+		conseillerDao.save(conseillerOld);
+		return true;
+	}
+
+	@Override
+	public boolean deleteConseiller(Long idConseiller) {
+		Conseiller conseiller=getConseiller(idConseiller);
+		conseillerDao.delete(conseiller);
+		return true;
+	}
+
+	@Override
+	public int seConnecter(String emailConseiller, String password) {
+		return conseillerDao.seConnecter(emailConseiller, password);
 	}
 }

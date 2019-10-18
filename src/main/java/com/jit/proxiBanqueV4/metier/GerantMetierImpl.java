@@ -56,4 +56,9 @@ public class GerantMetierImpl implements IGerantMetier {
 		return clientDao.alertDecouvert();
 	}
 
+	@Override
+	public Gerant seConnecter(String emailGerant, String password) {
+		return gerantDao.seConnecter(emailGerant, password);
+	}
+
 }

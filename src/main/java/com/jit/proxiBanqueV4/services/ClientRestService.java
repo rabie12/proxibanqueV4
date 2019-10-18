@@ -18,7 +18,7 @@ public class ClientRestService {
 	private IClientMetier clientMetier;
 	
 	@RequestMapping(value = "/clients",method = RequestMethod.PUT)
-	public boolean updateClient(@ RequestBody Client client) {
+	public boolean updateClient(@RequestBody Client client) {
 		return clientMetier.updateClient(client);
 	}
 

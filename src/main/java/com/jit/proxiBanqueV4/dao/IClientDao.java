@@ -22,4 +22,5 @@ public interface IClientDao extends JpaRepository<Client, Long> {
 	@Query("select c from Client c INNER JOIN Compte cp on c.idClient=cp.client.idClient where cp.solde<0")
 	public List<Client> alertDecouvert();
 	
+
 }
