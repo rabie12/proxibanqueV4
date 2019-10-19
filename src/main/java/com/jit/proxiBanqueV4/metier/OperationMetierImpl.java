@@ -37,6 +37,7 @@ public class OperationMetierImpl implements IOperationMetier {
 		operation.setConseiller(conseiller);
 		operationDao.save(operation);
 		compte.setSolde(compte.getSolde()+montant);
+		compteDao.save(compte);
 		return true;
 	}
 
@@ -57,6 +58,7 @@ public class OperationMetierImpl implements IOperationMetier {
 		operation.setConseiller(conseiller);
 		operationDao.save(operation);
 		compte.setSolde(compte.getSolde()-montant);
+		
 		return true;
 	}
 
@@ -64,6 +66,8 @@ public class OperationMetierImpl implements IOperationMetier {
 	public boolean virement(String idCompte1, String idCompte2, double montant, Long idConseiller) {
 		retirer(idCompte1, montant, idConseiller);
 		verser(idCompte2, montant, idConseiller);
+		
+		
 		return true;
 	}
 

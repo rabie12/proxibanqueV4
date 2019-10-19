@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jit.proxiBanqueV4.dao.IClientDao;
+import com.jit.proxiBanqueV4.dao.ICompteDao;
 import com.jit.proxiBanqueV4.entites.Client;
 @Service
 public class ClientMetierImpl implements IClientMetier {
 	@Autowired
 	private IClientDao clientDao;
+	@Autowired
+	private ICompteDao compteDao;
 	@Override
 	public Client saveClient(Client client) {
 		return clientDao.save(client);
@@ -30,6 +33,7 @@ public class ClientMetierImpl implements IClientMetier {
 	public boolean deleteClient(Long idClient) {
 		Client client=getClient(idClient);
 		clientDao.delete(client);
+		compteDao.deleteCompteByIdClient(idClient);
 		return true;
 	}
 

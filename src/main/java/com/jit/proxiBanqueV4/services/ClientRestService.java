@@ -17,22 +17,22 @@ public class ClientRestService {
 	@Autowired
 	private IClientMetier clientMetier;
 	
-	@RequestMapping(value = "/clients",method = RequestMethod.PUT)
+	@RequestMapping(value = "/proxiBanque/clients",method = RequestMethod.PUT)
 	public boolean updateClient(@RequestBody Client client) {
 		return clientMetier.updateClient(client);
 	}
 
-	@RequestMapping(value = "/clients/{idClient}",method = RequestMethod.DELETE)
+	@RequestMapping(value = "/proxiBanque/clients/{idClient}",method = RequestMethod.DELETE)
 	public boolean deleteClient(@PathVariable Long idClient) {
 		return clientMetier.deleteClient(idClient);
 	}
 
-	@RequestMapping(value = "/clients/{idClient}",method = RequestMethod.GET)
+	@RequestMapping(value = "/proxiBanque/clients/{idClient}",method = RequestMethod.GET)
 	public Client getClient(@PathVariable Long idClient) {
 		return clientMetier.getClient(idClient);
 	}
 
-	@RequestMapping(value = "/clients",method = RequestMethod.POST)
+	@RequestMapping(value = "/proxiBanque/clients",method = RequestMethod.POST)
 	public Client saveClient(@RequestBody Client client) {
 		return clientMetier.saveClient(client);
 	}

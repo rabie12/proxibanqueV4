@@ -10,15 +10,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jit.proxiBanqueV4.entites.Client;
+import com.jit.proxiBanqueV4.entites.Compte;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.metier.IClientMetier;
+import com.jit.proxiBanqueV4.metier.ICompteMetier;
 import com.jit.proxiBanqueV4.metier.IConseillerMetier;
 
 @RestController
 public class ConseillerRestService {
 	@Autowired
 	private IConseillerMetier conseillerMetier;
+	@Autowired
+	private ICompteMetier CompteMetier;
 	
+	@RequestMapping(value = "/proxiBanque/listeComptes",method = RequestMethod.GET)
+	public List<Compte> listeComptes() {
+		return CompteMetier.listeComptes();
+	}
+
 	@RequestMapping(value = "/proxiBanque/connecterConseiller/{emailConseiller}/{password}",method = RequestMethod.GET)
 	public int seConnecter(@PathVariable String emailConseiller,@PathVariable String password) {
 		return conseillerMetier.seConnecter(emailConseiller, password);

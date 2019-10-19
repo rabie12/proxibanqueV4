@@ -41,6 +41,9 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 		String idCompte="CC"+compteMetier.idCompte();
 		compteC.setIdCompte(idCompte);
 		compteC.setClient(client);
+		Conseiller conseiller=new Conseiller();
+		conseiller.setIdConseiller(client.getConseiller().getIdConseiller());
+		compteC.setConseiller(conseiller);
 		compteDao.save(compteC);
 		return client;
 		
