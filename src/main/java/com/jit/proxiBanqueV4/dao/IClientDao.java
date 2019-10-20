@@ -11,11 +11,11 @@ import com.jit.proxiBanqueV4.entites.Client;
 
 public interface IClientDao extends JpaRepository<Client, Long> {
 	@Query("select c from Client c where c.conseiller.idConseiller=:X")
-	public List<Client> findByIdConseiller(@Param("X") Long idConseiller);
+	public List<Client> findByIdConseiller(@Param("X") int idConseiller);
 
 
 	@Query("select c from Client c INNER JOIN Compte cp on c.idClient=cp.client.idClient where cp.solde<0 and c.conseiller.idConseiller=:X")
-	public List<Client> alertDecouvert(@Param("X") Long idConseiller);
+	public List<Client> alertDecouvert(@Param("X") int idConseiller);
 	
 
 

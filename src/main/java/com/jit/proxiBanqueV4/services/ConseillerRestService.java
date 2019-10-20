@@ -34,14 +34,14 @@ public class ConseillerRestService {
 	}
 
 	@RequestMapping(value = "/proxiBanque/alertDecouvert/{idConseiller}",method = RequestMethod.GET)
-	public List<Client> alertDecouvert(@PathVariable Long idConseiller) {
+	public List<Client> alertDecouvert(@PathVariable int idConseiller) {
 		return conseillerMetier.alertDecouvert(idConseiller);
 	}
 	@Autowired
 	private IClientMetier clientMetier;
 	
 	@RequestMapping(value = "/proxiBanque/listeClients/{idConseiller}",method = RequestMethod.GET)
-	public List<Client> listeClients(@PathVariable Long idConseiller) {
+	public List<Client> listeClients(@PathVariable int idConseiller) {
 		return conseillerMetier.listeClients(idConseiller);
 	}
 	

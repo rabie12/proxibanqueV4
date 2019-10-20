@@ -6,9 +6,9 @@ import org.springframework.data.repository.query.Param;
 
 import com.jit.proxiBanqueV4.entites.Conseiller;
 
-public interface IConseillerDao extends JpaRepository<Conseiller, Long> {
+public interface IConseillerDao extends JpaRepository<Conseiller, Integer> {
 
-	@Query("select c.idConseiller from Conseiller c  where c.emailConseiller=:E and c.password=:P")
-	public int seConnecter(@Param("E")String emailConseiller,@Param("P")String password);
+	@Query("select c.idConseiller from Conseiller c where c.emailConseiller=:E and c.password=:P")
+	public Integer seConnecter(@Param("E")String emailConseiller,@Param("P")String password);
 
 }

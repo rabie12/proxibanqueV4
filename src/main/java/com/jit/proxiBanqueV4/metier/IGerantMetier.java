@@ -18,7 +18,7 @@ public interface IGerantMetier {
 
 	public List<Conseiller> listeConseillers();
 	
-	public boolean affecterClient(Long idClient,Long idConseiller);
+	public boolean affecterClient(Long idClient,int idConseiller);
 	
 	public List<Client> alertDecouvert(); 
 }

@@ -43,7 +43,7 @@ public class GerantMetierImpl implements IGerantMetier {
 
 	@Override
 	@Transactional
-	public boolean affecterClient(Long idClient,Long idConseiller) {
+	public boolean affecterClient(Long idClient,int idConseiller) {
 		Client client=clientDao.findById(idClient).orElse(null);
 		Conseiller conseiller=conseillerDao.findById(idConseiller).orElse(null);
 		client.setConseiller(conseiller);

@@ -66,17 +66,17 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 		return clientDao.getOne(idClient) ;
 	}
 	@Override
-	public List<Client> listeClients(Long idConseiller) {
+	public List<Client> listeClients(int idConseiller) {
 		return clientDao.findByIdConseiller(idConseiller);
 	}
 
 	@Override
-	public List<Client> alertDecouvert(Long idConseiller) {
+	public List<Client> alertDecouvert(int idConseiller) {
 		return clientDao.alertDecouvert(idConseiller);
 	}
 
 	@Override
-	public Conseiller getConseiller(Long idConseiller) {
+	public Conseiller getConseiller(int idConseiller) {
 		return conseillerDao.getOne(idConseiller);
 	}
 
@@ -92,7 +92,7 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 	}
 
 	@Override
-	public boolean deleteConseiller(Long idConseiller) {
+	public boolean deleteConseiller(int idConseiller) {
 		Conseiller conseiller=getConseiller(idConseiller);
 		conseillerDao.delete(conseiller);
 		return true;
@@ -102,4 +102,8 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 	public int seConnecter(String emailConseiller, String password) {
 		return conseillerDao.seConnecter(emailConseiller, password);
 	}
+
+	
+
+	
 }

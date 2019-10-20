@@ -31,7 +31,7 @@ public class GerantRestService {
 	}
 
 	@RequestMapping(value = "/proxiBanque/affecterClient",method = RequestMethod.PUT)
-	public boolean affecterClient(@RequestParam Long idClient,@RequestParam Long idConseiller) {
+	public boolean affecterClient(@RequestParam Long idClient,@RequestParam int idConseiller) {
 		return gerantMetier.affecterClient(idClient,idConseiller);
 	}
 	@RequestMapping(value = "/proxiBanque/listeConseillers",method = RequestMethod.GET)

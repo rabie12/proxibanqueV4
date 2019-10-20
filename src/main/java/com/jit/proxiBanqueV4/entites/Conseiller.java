@@ -21,7 +21,7 @@ public class Conseiller implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idConseiller;
+	private int idConseiller;
 	private String nomConseiller;
 	private String prenomConseiller;
 	private String emailConseiller;
@@ -45,10 +45,10 @@ public class Conseiller implements Serializable {
 		this.password = password;
 		this.adresseConseiller = adresseConseiller;
 	}
-	public Long getIdConseiller() {
+	public int getIdConseiller() {
 		return idConseiller;
 	}
-	public void setIdConseiller(Long idConseiller) {
+	public void setIdConseiller(int idConseiller) {
 		this.idConseiller = idConseiller;
 	}
 	public String getNomConseiller() {
