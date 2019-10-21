@@ -5,7 +5,11 @@ import java.util.List;
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Gerant;
-
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 public interface IGerantMetier {
 	public Gerant saveGerant(Gerant gerant);
 	public List<Gerant> listeGerants();

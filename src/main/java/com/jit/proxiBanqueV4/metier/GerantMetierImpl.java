@@ -13,6 +13,11 @@ import com.jit.proxiBanqueV4.dao.IGerantDao;
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Gerant;
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 @Service
 public class GerantMetierImpl implements IGerantMetier {
 	@Autowired

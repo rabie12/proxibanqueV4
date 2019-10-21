@@ -7,7 +7,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jit.proxiBanqueV4.entites.Compte;
-
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 public interface ICompteDao extends JpaRepository<Compte, String> {
 	@Transactional
 	@Modifying

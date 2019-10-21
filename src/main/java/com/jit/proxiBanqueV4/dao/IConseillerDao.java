@@ -5,7 +5,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.jit.proxiBanqueV4.entites.Conseiller;
-
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 public interface IConseillerDao extends JpaRepository<Conseiller, Integer> {
 
 	@Query("select c.idConseiller from Conseiller c where c.emailConseiller=:E and c.password=:P")

@@ -10,7 +10,11 @@ import org.springframework.stereotype.Service;
 
 import com.jit.proxiBanqueV4.dao.ICompteDao;
 import com.jit.proxiBanqueV4.entites.Compte;
-
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 @Service
 public class CompteMetierImpl implements ICompteMetier {
 	@Autowired

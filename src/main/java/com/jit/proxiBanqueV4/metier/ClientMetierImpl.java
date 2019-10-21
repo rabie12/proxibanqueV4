@@ -1,3 +1,6 @@
+/**
+ * package Metier
+ */
 package com.jit.proxiBanqueV4.metier;
 
 import java.util.List;
@@ -8,6 +11,12 @@ import org.springframework.stereotype.Service;
 import com.jit.proxiBanqueV4.dao.IClientDao;
 import com.jit.proxiBanqueV4.dao.ICompteDao;
 import com.jit.proxiBanqueV4.entites.Client;
+/**
+  * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ */
+/**
+ * Class metier
+ */
 @Service
 public class ClientMetierImpl implements IClientMetier {
 	@Autowired
@@ -28,7 +37,9 @@ public class ClientMetierImpl implements IClientMetier {
 	public Client getClient(Long idClient) {
 		return clientDao.getOne(idClient) ;
 	}
-
+  /**
+   * Fonction de supression d'un client
+   */
 	@Override
 	public boolean deleteClient(Long idClient) {
 		Client client=getClient(idClient);

@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jit.proxiBanqueV4.entites.Compte;
 import com.jit.proxiBanqueV4.metier.ICompteMetier;
-
+/**
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ */
 @RestController
 public class CompteRestService {
 	@Autowired

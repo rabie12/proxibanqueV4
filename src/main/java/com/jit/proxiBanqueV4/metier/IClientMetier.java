@@ -1,9 +1,14 @@
+
 package com.jit.proxiBanqueV4.metier;
 
 import java.util.List;
 
 import com.jit.proxiBanqueV4.entites.Client;
-
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 public interface IClientMetier {
 	public Client saveClient(Client client);
 	public List<Client> listeClients();

@@ -5,7 +5,11 @@ import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 @Entity
 @DiscriminatorValue("CE")
 public class CompteEpargne extends Compte implements Serializable {

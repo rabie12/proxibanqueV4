@@ -5,7 +5,11 @@ import java.util.List;
 
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
-
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 public interface IConseillerMetier {
 	public Conseiller saveConseiller(Conseiller conseiller);
 	public List<Conseiller> listeConseillers();

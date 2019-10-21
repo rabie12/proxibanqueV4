@@ -1,6 +1,7 @@
 package com.jit.proxiBanqueV4.metier;
 
 import java.util.Date;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,11 @@ import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Compte;
 import com.jit.proxiBanqueV4.entites.CompteCourant;
 import com.jit.proxiBanqueV4.entites.Conseiller;
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+ */
 @Service
 public class ConseillerMetierImpl implements IConseillerMetier {
 	@Autowired
