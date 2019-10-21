@@ -16,11 +16,7 @@ import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Operation;
 import com.jit.proxiBanqueV4.entites.Retrait;
 import com.jit.proxiBanqueV4.entites.Versement;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
+
 @Service
 public class OperationMetierImpl implements IOperationMetier {
 	@Autowired
@@ -31,7 +27,7 @@ public class OperationMetierImpl implements IOperationMetier {
 	private IConseillerDao conseillerDao;
 	@Override
 	@Transactional
-	public boolean verser(String idCompte, double montant, int idConseiller) {
+	public boolean verser(String idCompte, double montant, Long idConseiller) {
 		Compte compte=compteDao.findById(idCompte).orElse(null);
 		Conseiller conseiller=conseillerDao.getOne(idConseiller);
 		Operation operation=new Versement();
@@ -47,7 +43,7 @@ public class OperationMetierImpl implements IOperationMetier {
 
 	@Override
 	@Transactional
-	public boolean retirer(String idCompte, double montant, int idConseiller) {
+	public boolean retirer(String idCompte, double montant, Long idConseiller) {
 		Compte compte=compteDao.findById(idCompte).orElse(null);
 		double decouvert=0;
 		if(compte instanceof CompteCourant) {
@@ -67,7 +63,7 @@ public class OperationMetierImpl implements IOperationMetier {
 	}
 
 	@Override
-	public boolean virement(String idCompte1, String idCompte2, double montant, int idConseiller) {
+	public boolean virement(String idCompte1, String idCompte2, double montant, Long idConseiller) {
 		retirer(idCompte1, montant, idConseiller);
 		verser(idCompte2, montant, idConseiller);
 		

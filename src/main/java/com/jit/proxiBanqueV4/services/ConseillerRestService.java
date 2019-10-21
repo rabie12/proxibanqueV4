@@ -22,7 +22,23 @@ public class ConseillerRestService {
 	private IConseillerMetier conseillerMetier;
 	@Autowired
 	private ICompteMetier CompteMetier;
+
+	@Autowired
+	private IClientMetier clientMetier;
 	
+	@RequestMapping(value = "/proxiBanque/listeCompteClient/{idClient}",method = RequestMethod.GET)
+	public List<Object> listeCompteClient(@PathVariable Long idClient) {
+		return clientMetier.listeCompteClient(idClient);
+	}
+	@RequestMapping(value = "/proxiBanque/listeClientVcSolde",method = RequestMethod.GET)
+	public List<Object> listeClientVcSolde() {
+		return clientMetier.listeClientVcSolde();
+	}
+	@RequestMapping(value = "/proxiBanque/listeClientVcSolde/{idConseiller}",method = RequestMethod.GET)
+	public List<Object> listeClientVcSolde(@PathVariable Long idConseiller) {
+		return clientMetier.listeClientVcSolde(idConseiller);
+	}
+
 	@RequestMapping(value = "/proxiBanque/listeComptes",method = RequestMethod.GET)
 	public List<Compte> listeComptes() {
 		return CompteMetier.listeComptes();
@@ -34,14 +50,12 @@ public class ConseillerRestService {
 	}
 
 	@RequestMapping(value = "/proxiBanque/alertDecouvert/{idConseiller}",method = RequestMethod.GET)
-	public List<Client> alertDecouvert(@PathVariable int idConseiller) {
+	public List<Client> alertDecouvert(@PathVariable Long idConseiller) {
 		return conseillerMetier.alertDecouvert(idConseiller);
 	}
-	@Autowired
-	private IClientMetier clientMetier;
 	
 	@RequestMapping(value = "/proxiBanque/listeClients/{idConseiller}",method = RequestMethod.GET)
-	public List<Client> listeClients(@PathVariable int idConseiller) {
+	public List<Client> listeClients(@PathVariable Long idConseiller) {
 		return conseillerMetier.listeClients(idConseiller);
 	}
 	

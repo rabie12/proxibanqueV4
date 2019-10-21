@@ -14,18 +14,14 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
+
 @Entity
 public class Conseiller implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idConseiller;
+	private Long idConseiller;
 	private String nomConseiller;
 	private String prenomConseiller;
 	private String emailConseiller;
@@ -49,10 +45,10 @@ public class Conseiller implements Serializable {
 		this.password = password;
 		this.adresseConseiller = adresseConseiller;
 	}
-	public int getIdConseiller() {
+	public Long getIdConseiller() {
 		return idConseiller;
 	}
-	public void setIdConseiller(int idConseiller) {
+	public void setIdConseiller(Long idConseiller) {
 		this.idConseiller = idConseiller;
 	}
 	public String getNomConseiller() {

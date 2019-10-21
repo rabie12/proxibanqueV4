@@ -5,11 +5,6 @@ import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
 @Entity
 @DiscriminatorValue("versement")
 public class Versement extends Operation implements Serializable {

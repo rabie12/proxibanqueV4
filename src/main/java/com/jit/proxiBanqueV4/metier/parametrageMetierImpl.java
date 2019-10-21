@@ -5,9 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.jit.proxiBanqueV4.dao.IParametrageDao;
 import com.jit.proxiBanqueV4.entites.Parametrage;
-/**
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- */
+
 @Service
 public class parametrageMetierImpl implements IParametrageMetier {
 	@Autowired

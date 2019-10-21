@@ -1,9 +1,5 @@
 package com.jit.proxiBanqueV4.entites;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
+
 import java.io.Serializable;
 import java.util.Date;
 

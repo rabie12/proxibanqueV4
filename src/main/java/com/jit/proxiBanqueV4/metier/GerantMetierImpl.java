@@ -13,11 +13,6 @@ import com.jit.proxiBanqueV4.dao.IGerantDao;
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Gerant;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
 @Service
 public class GerantMetierImpl implements IGerantMetier {
 	@Autowired
@@ -48,7 +43,7 @@ public class GerantMetierImpl implements IGerantMetier {
 
 	@Override
 	@Transactional
-	public boolean affecterClient(Long idClient,int idConseiller) {
+	public boolean affecterClient(Long idClient,Long idConseiller) {
 		Client client=clientDao.findById(idClient).orElse(null);
 		Conseiller conseiller=conseillerDao.findById(idConseiller).orElse(null);
 		client.setConseiller(conseiller);
@@ -62,8 +57,13 @@ public class GerantMetierImpl implements IGerantMetier {
 	}
 
 	@Override
-	public Gerant seConnecter(String emailGerant, String password) {
+	public int seConnecter(String emailGerant, String password) {
 		return gerantDao.seConnecter(emailGerant, password);
+	}
+
+	@Override
+	public List<Conseiller> listeConseillersById(Long idGerant) {
+		return conseillerDao.findByIdGerant(idGerant);
 	}
 
 }

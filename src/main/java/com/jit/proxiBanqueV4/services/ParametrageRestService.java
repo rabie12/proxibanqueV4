@@ -16,7 +16,7 @@ public class ParametrageRestService {
 	private IParametrageMetier parametrageMetier;
 	
 	@RequestMapping(value = "/proxiBanque/connecterParametrage/{login}/{password}",method = RequestMethod.GET)
-	public Integer seConnecter( @PathVariable String login,@PathVariable String password) {
+	public int seConnecter( @PathVariable String login,@PathVariable String password) {
 		return parametrageMetier.seConnecter(login, password);
 	}
 	@RequestMapping(value = "/proxiBanque/parametrage/{idParametrage}",method = RequestMethod.GET)

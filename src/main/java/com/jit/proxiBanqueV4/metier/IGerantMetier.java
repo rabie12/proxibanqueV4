@@ -5,15 +5,11 @@ import java.util.List;
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Gerant;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
+
 public interface IGerantMetier {
 	public Gerant saveGerant(Gerant gerant);
 	public List<Gerant> listeGerants();
-	public Gerant seConnecter(String emailGerant,String password);
+	public int seConnecter(String emailGerant,String password);
 	
 	
 	
@@ -22,7 +18,12 @@ public interface IGerantMetier {
 
 	public List<Conseiller> listeConseillers();
 	
-	public boolean affecterClient(Long idClient,int idConseiller);
+	public boolean affecterClient(Long idClient,Long idConseiller);
 	
 	public List<Client> alertDecouvert(); 
+	
+
+	public List<Conseiller> listeConseillersById(Long idGerant);
+	
+	
 }

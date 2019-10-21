@@ -10,11 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.jit.proxiBanqueV4.dao.ICompteDao;
 import com.jit.proxiBanqueV4.entites.Compte;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
+
 @Service
 public class CompteMetierImpl implements ICompteMetier {
 	@Autowired
@@ -60,6 +56,11 @@ public class CompteMetierImpl implements ICompteMetier {
 		Compte compte=getCompteById(idCompte);
 		compteDao.delete(compte);
 		return false;
+	}
+
+	@Override
+	public int countCompteMoinsDecouvert() {
+		return compteDao.countCompteMoinsDecouvert();
 	}
 
 }

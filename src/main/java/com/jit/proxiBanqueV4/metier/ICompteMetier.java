@@ -4,11 +4,7 @@ import java.math.BigInteger;
 import java.util.List;
 
 import com.jit.proxiBanqueV4.entites.Compte;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
+
 public interface ICompteMetier {
 	public Compte saveCompte(Compte compte);
 	public Compte getCompteById(String idCompte);
@@ -16,5 +12,6 @@ public interface ICompteMetier {
 	public boolean deleteCompte(String idCompte);
 	
 	public BigInteger idCompte();
+	public int countCompteMoinsDecouvert();
 
 }

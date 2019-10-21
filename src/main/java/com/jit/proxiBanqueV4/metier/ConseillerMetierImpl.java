@@ -1,11 +1,11 @@
 package com.jit.proxiBanqueV4.metier;
 
 import java.util.Date;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.jit.proxiBanqueV4.dao.IClientDao;
 import com.jit.proxiBanqueV4.dao.ICompteDao;
@@ -14,11 +14,6 @@ import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Compte;
 import com.jit.proxiBanqueV4.entites.CompteCourant;
 import com.jit.proxiBanqueV4.entites.Conseiller;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
 @Service
 public class ConseillerMetierImpl implements IConseillerMetier {
 	@Autowired
@@ -72,17 +67,17 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 		return clientDao.getOne(idClient) ;
 	}
 	@Override
-	public List<Client> listeClients(int idConseiller) {
+	public List<Client> listeClients(Long idConseiller) {
 		return clientDao.findByIdConseiller(idConseiller);
 	}
 
 	@Override
-	public List<Client> alertDecouvert(int idConseiller) {
+	public List<Client> alertDecouvert(Long idConseiller) {
 		return clientDao.alertDecouvert(idConseiller);
 	}
 
 	@Override
-	public Conseiller getConseiller(int idConseiller) {
+	public Conseiller getConseiller(Long idConseiller) {
 		return conseillerDao.getOne(idConseiller);
 	}
 
@@ -98,8 +93,11 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 	}
 
 	@Override
-	public boolean deleteConseiller(int idConseiller) {
+	@Transactional
+	public boolean deleteConseiller(Long idConseiller) {
 		Conseiller conseiller=getConseiller(idConseiller);
+		clientDao.updateIdConseillerClient(conseiller.getIdConseiller());
+		compteDao.updateIdConseillerCompte(idConseiller);
 		conseillerDao.delete(conseiller);
 		return true;
 	}
@@ -108,8 +106,4 @@ public class ConseillerMetierImpl implements IConseillerMetier {
 	public int seConnecter(String emailConseiller, String password) {
 		return conseillerDao.seConnecter(emailConseiller, password);
 	}
-
-	
-
-	
 }

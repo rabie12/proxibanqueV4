@@ -1,5 +1,6 @@
 package com.jit.proxiBanqueV4.services;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,21 +8,48 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Gerant;
+import com.jit.proxiBanqueV4.metier.IClientMetier;
+import com.jit.proxiBanqueV4.metier.IConseillerMetier;
 import com.jit.proxiBanqueV4.metier.IGerantMetier;
 
 @RestController
 public class GerantRestService {
 	@Autowired
 	private IGerantMetier gerantMetier;
+	@Autowired
+	private IConseillerMetier conseillerMetier;
+	@Autowired
+	private IClientMetier clientMetier;
 	
+	@RequestMapping(value = "/proxiBanque/affecterClient2",method = RequestMethod.PUT)
+	public void affecterClient2(@RequestBody HashMap<String,Object> operation) {
+		Long idClient=Long.valueOf((String) operation.get("idClient"));
+		Long idConseiller=Long.valueOf((String) operation.get("idConseiller"));
+		clientMetier.affecterClient2(idConseiller, idClient);
+	}
+
+	@RequestMapping(value ="/proxiBanque/listeClientNonAffecter",method = RequestMethod.GET)
+	public List<Client> listeClientsNonAffecter() {
+		return clientMetier.listeClientsNonAffecter();
+	}
+
+	@RequestMapping(value = "/proxiBanque/deleteConseiller/{idConseiller}",method = RequestMethod.DELETE)
+	public boolean deleteConseiller(@PathVariable Long idConseiller) {
+		return conseillerMetier.deleteConseiller(idConseiller);
+	}
+
+	@RequestMapping(value = "/proxiBanque/listeConseillers/{idGerant}",method = RequestMethod.GET)
+	public List<Conseiller> listeConseillersById(@PathVariable Long idGerant) {
+		return gerantMetier.listeConseillersById(idGerant);
+	}
+
 	@RequestMapping(value = "/proxiBanque/connecterGerant/{emailGerant}/{password}",method = RequestMethod.GET)
-	public Gerant seConnecter(@PathVariable String emailGerant,@PathVariable String password) {
+	public int seConnecter(@PathVariable String emailGerant,@PathVariable String password) {
 		return gerantMetier.seConnecter(emailGerant, password);
 	}
 
@@ -31,7 +59,9 @@ public class GerantRestService {
 	}
 
 	@RequestMapping(value = "/proxiBanque/affecterClient",method = RequestMethod.PUT)
-	public boolean affecterClient(@RequestParam Long idClient,@RequestParam int idConseiller) {
+	public boolean affecterClient(@RequestBody HashMap<String,Object> operation) {
+		Long idClient=Long.valueOf((String) operation.get("idClient"));
+		Long idConseiller=Long.valueOf((String) operation.get("idConseiller"));
 		return gerantMetier.affecterClient(idClient,idConseiller);
 	}
 	@RequestMapping(value = "/proxiBanque/listeConseillers",method = RequestMethod.GET)

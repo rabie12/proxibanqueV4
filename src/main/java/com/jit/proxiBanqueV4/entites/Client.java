@@ -1,7 +1,6 @@
 package com.jit.proxiBanqueV4.entites;
 
 import java.io.Serializable;
-
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -16,11 +15,6 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSetter;
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
- */
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
 public class Client implements Serializable {
