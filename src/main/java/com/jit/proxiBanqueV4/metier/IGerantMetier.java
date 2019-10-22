@@ -5,11 +5,18 @@ import java.util.List;
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Gerant;
+<<<<<<< HEAD
 /** 
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 /**
  * Interface IGerantMetier
+=======
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+>>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 public interface IGerantMetier {
 	/**

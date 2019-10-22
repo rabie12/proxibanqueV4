@@ -1,6 +1,7 @@
 package com.jit.proxiBanqueV4.metier;
 
 import java.util.Date;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +14,18 @@ import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Compte;
 import com.jit.proxiBanqueV4.entites.CompteCourant;
 import com.jit.proxiBanqueV4.entites.Conseiller;
+<<<<<<< HEAD
 /** 
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 /**
  * Classe ConseillerMetier qui imlplémente l'interface IConseillerMetier
+=======
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+>>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 @Service
 public class ConseillerMetierImpl implements IConseillerMetier {

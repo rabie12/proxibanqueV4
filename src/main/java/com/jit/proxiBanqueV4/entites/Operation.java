@@ -2,6 +2,7 @@
 package com.jit.proxiBanqueV4.entites;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 import javax.persistence.DiscriminatorColumn;
@@ -13,11 +14,18 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+<<<<<<< HEAD
 /** 
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 /**
  * Classe abstraite Operation 
+=======
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+>>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

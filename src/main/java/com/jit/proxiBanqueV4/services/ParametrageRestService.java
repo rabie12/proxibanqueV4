@@ -26,7 +26,7 @@ public class ParametrageRestService {
 	 * @return
 	 */
 	@RequestMapping(value = "/proxiBanque/connecterParametrage/{login}/{password}",method = RequestMethod.GET)
-	public Parametrage seConnecter( @PathVariable String login,@PathVariable String password) {
+	public Integer seConnecter( @PathVariable String login,@PathVariable String password) {
 		return parametrageMetier.seConnecter(login, password);
 	}
 	/**

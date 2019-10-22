@@ -21,12 +21,19 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+<<<<<<< HEAD
 /** 
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 
 /**
  * Classe abstraite Compte
+=======
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+>>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -43,7 +50,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public abstract class Compte implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+	/**
+	 * Parametre (int idCompt,double solde..) 
+	 */
 	@Id
 	private String idCompte;
 	private Date dateCreation;

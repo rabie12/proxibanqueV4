@@ -1,9 +1,16 @@
 package com.jit.proxiBanqueV4.metier;
+<<<<<<< HEAD
 /** 
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 /**
  * Interface IOperationMetier 
+=======
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+>>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 public interface IOperationMetier {
 	/**

@@ -6,7 +6,13 @@ import org.springframework.data.repository.query.Param;
 
 import com.jit.proxiBanqueV4.entites.Conseiller;
 /**
+<<<<<<< HEAD
  * Interface IConseillerDao qui hérite de l'interface de JpaRepository
+=======
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+>>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 public interface IConseillerDao extends JpaRepository<Conseiller, Integer> {
 	/**

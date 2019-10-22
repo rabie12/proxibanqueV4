@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.jit.proxiBanqueV4.dao.ICompteDao;
 import com.jit.proxiBanqueV4.entites.Compte;
+<<<<<<< HEAD
 
 /**
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
@@ -17,6 +18,12 @@ import com.jit.proxiBanqueV4.entites.Compte;
 
 /**
  * Classe CompteMetier qui imlplémente l'interface ICompteMetier
+=======
+/**
+ * 
+ * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
+ *
+>>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 @Service
 public class CompteMetierImpl implements ICompteMetier {
