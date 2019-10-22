@@ -13,6 +13,12 @@ import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Compte;
 import com.jit.proxiBanqueV4.entites.CompteCourant;
 import com.jit.proxiBanqueV4.entites.Conseiller;
+/** 
+ * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
+ */
+/**
+ * Classe ConseillerMetier qui imlplémente l'interface IConseillerMetier
+ */
 @Service
 public class ConseillerMetierImpl implements IConseillerMetier {
 	@Autowired

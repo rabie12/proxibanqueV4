@@ -7,8 +7,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jit.proxiBanqueV4.entites.Compte;
-
+/**
+ * Interface ICompteDao qui hérite de l'interface de JpaRepository
+ */
 public interface ICompteDao extends JpaRepository<Compte, String> {
+	/**
+	 * Méthode qui permet de supprimer de la BD un compte par idClient
+	 * @param idClient
+	 */
 	@Transactional
 	@Modifying
 	@Query("delete from Compte c where c.client.idClient=:X")
