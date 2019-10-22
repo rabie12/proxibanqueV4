@@ -16,19 +16,17 @@ import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Operation;
 import com.jit.proxiBanqueV4.entites.Retrait;
 import com.jit.proxiBanqueV4.entites.Versement;
-<<<<<<< HEAD
 
-/** 
- * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
- */
+
+
+
 /**
  * Classe OperationMetierImpl qui implémente l'interface IOperationMetier
-=======
+ */
 /**
  * 
  * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
  *
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 @Service
 public class OperationMetierImpl implements IOperationMetier {

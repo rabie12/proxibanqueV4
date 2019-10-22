@@ -10,26 +10,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-<<<<<<< HEAD
-=======
+
 /**
  * 
  * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
  *
  */
-@Entity
-public class Gerant  implements Serializable {
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
-
-/** 
- * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
- */
-
 /**
  * Classe Gerant
  */
 @Entity
-public class Gerant implements Serializable {
+public class Gerant  implements Serializable {
+
 	/**
 	 * Parametre (Long idGerant,String nomGerant,String prenomGerant,String
 	 * emailGerant,String adresseGerant,Collection<Conseiller> conseillers)

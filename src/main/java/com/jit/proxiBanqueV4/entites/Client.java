@@ -16,8 +16,7 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSetter;
-<<<<<<< HEAD
-=======
+
 /**
  * 
  * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
@@ -26,23 +25,8 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
 public class Client implements Serializable {
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
 
-/** 
- * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
- */
-/**
- * Classe Client
- */
-
-@Entity
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-public class Client implements Serializable {
-	/**
-	 * Parametre : (Long idClient,String
-	 * nomClient,prenomClient,emailClient,adresseClient,Collection<Compte>
-	 * comptes,private Conseiller conseiller )
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

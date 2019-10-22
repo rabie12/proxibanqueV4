@@ -4,18 +4,14 @@ import java.math.BigInteger;
 import java.util.List;
 
 import com.jit.proxiBanqueV4.entites.Compte;
-<<<<<<< HEAD
-/** 
- * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
- */
+
 /**
  * Interface ICompteMetier
-=======
+ */
 /**
  * 
  * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
  *
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 public interface ICompteMetier {
 	/**

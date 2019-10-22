@@ -13,17 +13,13 @@ import com.jit.proxiBanqueV4.dao.IClientDao;
 import com.jit.proxiBanqueV4.dao.ICompteDao;
 import com.jit.proxiBanqueV4.entites.Client;
 /**
-<<<<<<< HEAD
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 /**
  * Classe ClientMetier qui imlplémente l'interface IClientMetier
-=======
-  * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
  */
 /**
  * Class metier
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 @Service
 public class ClientMetierImpl implements IClientMetier {
@@ -52,15 +48,15 @@ public class ClientMetierImpl implements IClientMetier {
 	public Client getClient(Long idClient) {
 		return clientDao.getOne(idClient) ;
 	}
-<<<<<<< HEAD
+
 	/**
 	 * méthode qui permet de supprimer un client à partir d'un client recu en paramètre
 	 */
-=======
+
   /**
    * Fonction de supression d'un client
    */
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
+
 	@Override
 	public boolean deleteClient(Long idClient) {
 		Client client=getClient(idClient);

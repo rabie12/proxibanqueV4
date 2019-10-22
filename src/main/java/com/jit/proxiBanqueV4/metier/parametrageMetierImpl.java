@@ -5,17 +5,14 @@ import org.springframework.stereotype.Service;
 
 import com.jit.proxiBanqueV4.dao.IParametrageDao;
 import com.jit.proxiBanqueV4.entites.Parametrage;
-<<<<<<< HEAD
+
 /** 
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 /**
  * Classe parametrageMetierImpl qui implémente l'interface IParametrageMetier
-=======
-/**
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
+
 @Service
 public class parametrageMetierImpl implements IParametrageMetier {
 	@Autowired

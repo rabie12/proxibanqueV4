@@ -14,20 +14,15 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
-<<<<<<< HEAD
+
 /** 
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 
 /**
  * Classe Conseiller
-=======
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
+
 @Entity
 public class Conseiller implements Serializable {
 

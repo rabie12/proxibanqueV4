@@ -13,18 +13,13 @@ import com.jit.proxiBanqueV4.dao.IGerantDao;
 import com.jit.proxiBanqueV4.entites.Client;
 import com.jit.proxiBanqueV4.entites.Conseiller;
 import com.jit.proxiBanqueV4.entites.Gerant;
-<<<<<<< HEAD
-/** 
- * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
- */
-/**
- * Classe GérantMetierImplt qui implémente l'interfeace IGerantMetier
-=======
+
+
+
 /**
  * 
  * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
  *
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 @Service
 public class GerantMetierImpl implements IGerantMetier {

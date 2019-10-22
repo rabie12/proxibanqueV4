@@ -4,19 +4,13 @@ package com.jit.proxiBanqueV4.metier;
 import java.util.List;
 
 import com.jit.proxiBanqueV4.entites.Client;
-<<<<<<< HEAD
+
 /** 
  * @author Habachi,Cadi,Bourkha,Sidelkhir,Nouri
  */
 
 /**
  * Interface IClientMetier
-=======
-/**
- * 
- * @author Habachi,Cadi,Bourkha,Sid-Elkhir,Nouri
- *
->>>>>>> branch 'master' of https://github.com/rabie12/proxibanqueV4.git
  */
 public interface IClientMetier {
 	/**
